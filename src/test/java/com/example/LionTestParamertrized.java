@@ -10,13 +10,13 @@ import static org.junit.Assert.assertEquals;
 
 
 @RunWith(Parameterized.class)
-public class LionParamertrizedTest {
+public class LionTestParamertrized {
 
     private final String sex;
     private final Feline felineSpy;
     private final boolean isHaveMane;
 
-    public LionParamertrizedTest(String sex, Feline felineSpy, boolean isHaveMane) {
+    public LionTestParamertrized(String sex, Feline felineSpy, boolean isHaveMane) {
         this.sex = sex;
         this.felineSpy = felineSpy;
         this.isHaveMane = isHaveMane;
@@ -33,14 +33,12 @@ public class LionParamertrizedTest {
     @Test
     public void testDoesHaveMane() {
         Lion lion = Lion.getInstance(sex, felineSpy);
-        boolean result = lion.doesHaveMane();
-        assertEquals(isHaveMane,result);
+        assertEquals(isHaveMane,lion.doesHaveMane());
     }
 
     @Test
     public void testGetFood() throws Exception {
         Lion lion = Lion.getInstance(sex, felineSpy);
-        List<String> result = lion.getFood();
-        assertEquals(List.of("Животные","Птицы", "Рыба"), result);
+        assertEquals(List.of("Животные","Птицы", "Рыба"), lion.getFood());
     }
 }

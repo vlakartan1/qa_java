@@ -20,9 +20,10 @@ public class AnimalTest {
         cat = new Cat(felineMock);
     }
 
-
     @Test
-    public void getSound() {assertEquals("Мяу", cat.getSound());}
+    public void getSound() {
+        assertEquals("Мяу", cat.getSound());
+    }
 
     @Test
     public void getFood() throws Exception {
@@ -40,24 +41,18 @@ public class AnimalTest {
     @Test
     public void testFelineGetFamily() {
         Feline feline = new Feline();
-        String expectedFamily = "Кошачьи";
-        String actualFamily = feline.getFamily();
-        Assert.assertEquals(expectedFamily, actualFamily);
+        Assert.assertEquals("Кошачьи", feline.getFamily());
     }
 
     @Test
     public void testCatGetSound() {
         Cat cat = new Cat(new Feline());
-        String expectedSound = "Мяу";
-        String actualSound = cat.getSound();
-        Assert.assertEquals(expectedSound, actualSound);
+        Assert.assertEquals("Мяу", cat.getSound());
     }
 
     @Test
     public void testCatGetFood() throws Exception {
         Cat cat = new Cat(new Feline());
-        List<String> expectedFood = List.of("Животные", "Птицы", "Рыба");
-        List<String> actualFood = cat.getFood();
-        Assert.assertEquals(expectedFood, actualFood);
-    }  
+        Assert.assertEquals(List.of("Животные", "Птицы", "Рыба"), cat.getFood());
+    }
 }

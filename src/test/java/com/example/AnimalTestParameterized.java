@@ -37,7 +37,7 @@ public class AnimalTestParameterized {
             List<String> actualFood = animal.getFood(animalKind);
             assertTrue(actualFood.containsAll(expectedFood) && expectedFood.containsAll(actualFood));
         } catch (Exception e) {
-            fail("Unexpected exception: " + e.getMessage());
+            fail("Неожиданное исключение: " + e.getMessage());
         }
     }
 }
